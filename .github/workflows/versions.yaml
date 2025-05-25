@@ -3,7 +3,7 @@ name: Language version check
 on: 
   push:
     paths:
-      - ".github/workflows/version.yml"
+      - ".github/workflows/versions.yaml"
   workflow_dispatch:
     
 jobs:
