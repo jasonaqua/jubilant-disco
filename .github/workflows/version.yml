@@ -1,0 +1,13 @@
+name: version checking
+
+on: 
+  push:
+    paths:
+      - ".github/workflows/version.yml"
+  workflow_dispatch:
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+      - run: python --version
