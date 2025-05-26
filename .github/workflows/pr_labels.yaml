@@ -2,7 +2,7 @@ name: pr_labels
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, reopened]
     
 jobs:
   labels:
@@ -16,8 +16,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             github.rest.issues.addLabels({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number,
+              owner, repo, issue_number,
               labels: ['bug']
             });
