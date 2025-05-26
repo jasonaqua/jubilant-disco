@@ -15,6 +15,14 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const owner = context.repo.owner;
+            
+            const repo = context.repo.repo;
+            
+            const issue_number = context.issue.number;
+
+            console.log(`owner is ${owner}, repo is ${repo}, issue number is ${issue_number}`);
+            
             github.rest.issues.addLabels({
               owner, repo, issue_number,
               labels: ['bug']
