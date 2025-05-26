@@ -3,6 +3,8 @@ name: pr_labels
 on:
   pull_request:
     types: [opened, reopened]
+  workflow_dispatch:
+    
     
 jobs:
   labels:
@@ -13,7 +15,6 @@ jobs:
       - name: Add 'bug' label to new pr's
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const owner = context.repo.owner;
             
